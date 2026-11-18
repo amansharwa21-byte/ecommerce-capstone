@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechGear E-Commerce Capstone</title>
-    <!-- Link to our optimized CSS -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechGear is a student front-end e-commerce demonstration built with HTML, CSS and JavaScript.">
+  <title>TechGear | Everyday Tech, Made Simple</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-
-    <!-- Modular Navigation -->
-    <nav class="navbar">
-        <div class="logo">TechGear.</div>
-        <ul class="nav-links">
-            <!-- Notice the hash (#) in the href. This is for client-side routing -->
-            <li><a href="#/">Catalog</a></li>
-            <li><a href="#/cart">Cart (<span id="cart-count">0</span>)</a></li>
-            <li><a href="#/about">About Us</a></li>
-            <li><a href="#/contact">Contact Us</a></li>
-        </ul>
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="logo" href="#/" aria-label="TechGear home"><span class="logo-mark">T</span><span>techgear<span class="logo-dot">.</span><small>EVERYDAY TECH, MADE SIMPLE</small></span></a>
+      <div class="nav-links">
+        <a href="#/" data-nav="catalog">Shop</a>
+        <a href="#/about" data-nav="about">About</a>
+        <a href="#/contact" data-nav="contact">Contact</a>
+        <a class="cart-link" href="#/cart" data-nav="cart"><span aria-hidden="true">▢</span> Cart <span id="cart-count" class="cart-count">0</span></a>
+      </div>
     </nav>
+  </header>
 
-    <!-- The DOM element where our views will be dynamically injected -->
-    <main id="app-root" class="container"></main>
+  <main id="app-root" class="container" tabindex="-1"></main>
 
-    <!-- Link to our application logic -->
-    <script src="app.js"></script>
+  <footer class="site-footer">
+    <div><a class="footer-brand" href="#/">techgear<span>.</span></a><p>A simple electronics storefront demonstration.</p></div>
+    <div class="footer-links"><a href="#/about">About Us</a><a href="#/contact">Contact</a><a href="#/cart">Your Cart</a></div>
+    <p class="footer-note">Student project · No real payments or orders</p>
+  </footer>
+
+  <dialog id="product-dialog" class="product-dialog" aria-labelledby="dialog-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Close product details">×</button></form>
+    <div id="dialog-content"></div>
+  </dialog>
 </body>
 </html>
